@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema
+	xmlns="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext"
+	xmlns:CTMF="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes"
+	xmlns:CTMF1="http://soa.coe.com/CommonTypes/Mediation/Framework"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/Framework">
+
+	<!--***-->
+
+
+	<!--***-->
+	<xs:import
+		schemaLocation="../../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"
+		namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+	</xs:import>
+	<xs:import schemaLocation="../../../../CORE_COMMON/Resources/Schemas/CommonTypes/CommonFrameworkTypes.xsd" namespace="http://soa.coe.com/CommonTypes/Mediation/Framework"></xs:import>
+	<xs:element name="processContext" type="process_context_type" />
+	<xs:element name="applicationContext"
+		type="CTMF1:nvp_short_list_type" />
+	<xs:element name="technicalContext" type="CTMF1:nvp_short_list_type" />
+	<xs:element name="msgProperties" nillable="true"
+		type="CTMF1:nvp_list_type" />
+	<xs:element name="otherSoapHeaders" nillable="true"
+		type="CTMF1:soap_headers_type" />
+
+	<!--***-->
+	<xs:complexType name="process_context_type">
+		<xs:sequence>
+			<xs:element name="exchangeContext"
+				type="exchange_context_type" />
+			<xs:element name="messageContext" nillable="true"
+				type="message_context_type" />
+			<xs:element name="extendedCtx" nillable="true"
+				type="CTMF:sequence_any_type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="exchange_context_type">
+		<xs:sequence>
+			<xs:element name="exchangeId" type="CTMF:exchange_id_type" />
+			<xs:element name="serviceId" type="CTMF:service_id_type" />
+			<xs:element name="exchangeCode"
+				type="CTMF:exchange_code_type" />
+			<xs:element name="serviceCode"
+				type="CTMF:service_code_type" />
+			<xs:element name="exchangeVersion" nillable="true"
+				type="CTMF:version_type" />
+			<xs:element name="componentVersion" nillable="true"
+				type="CTMF:version_type" />
+			<xs:element name="enabletracing"
+				type="CTMF:enable_tracing_type" />
+			<xs:element name="log_msgbody"
+				type="CTMF:log_msg_body_type" />
+			<xs:element name="log_msgconsulting"
+				type="CTMF:log_msg_consulting_type" />
+			<xs:element name="log_component"
+				type="CTMF:log_component_type" />
+			<xs:element name="log_component_error"
+				type="CTMF:log_component_error_type" />
+			<xs:element minOccurs="0" name="set_Start_Exchange"
+				type="CTMF:start_ech_type" />
+			<xs:element minOccurs="0" name="set_End_Exchange"
+				type="CTMF:end_ech_type" />
+			<xs:element minOccurs="0" name="set_Error_Exchange"
+				type="CTMF:set_ech_error_type" />
+			<xs:element name="isReplay" type="CTMF:is_replay_type" />
+			<xs:element name="weight" type="xs:int" />
+			<xs:element name="contextId" type="CTMF1:context_id_type" />
+			<xs:element name="contextTimeStamp" type="xs:dateTime" />
+			<xs:element name="mainProcessPath" nillable="true"
+				type="CTMF1:process_path" />
+			<xs:element name="History" nillable="true"
+				type="CTMF:History_type" />
+			<xs:element name="RecvHistory" nillable="true"
+				type="CTMF:History_type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="message_context_type">
+		<xs:sequence>
+			<xs:element name="msgTimestamp" nillable="true"
+				type="xs:dateTime" />
+			<xs:element name="messagingType" nillable="true"
+				type="CTMF1:messaging_type_type" />
+			<xs:element name="msgId" nillable="true"
+				type="CTMF:event_id_type" />
+			<xs:element name="msgPriority" nillable="true"
+				type="xs:int" />
+			<xs:element name="transactionId" nillable="true"
+				type="CTMF:transaction_id_type" />
+			<xs:element name="correlationId" nillable="true"
+				type="CTMF:correlation_id_type" />
+			<xs:element name="sourceSystem" nillable="true"
+				type="CTMF:source_system_type" />
+			<xs:element name="privateCtxt" nillable="true"
+				type="CTMF:sequence_any_type" />
+			<xs:element ref="msgProperties" />
+			<xs:element name="msgBatchInfo" nillable="true"
+				type="CTMF:batch_info_type" />
+			<xs:element name="xmlMsgAction" nillable="true"
+				type="CTMF1:xml_msg_action_type" />
+			<xs:element name="msgResubmitInd" nillable="true"
+				type="CTMF1:resubmission_indicator_type" />
+			<xs:element ref="otherSoapHeaders" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

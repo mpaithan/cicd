@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://soa.coe.com/CommonTypes/Mediation/SoapConfigData" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soa.coe.com/CommonTypes/Mediation/SoapConfigData">
+	<xs:element name="_configData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="endpointURL" type="xs:string"/>
+				<xs:element minOccurs="0" name="host" type="xs:string"/>
+				<xs:element minOccurs="0" name="soapAction" type="xs:string"/>
+				<xs:element minOccurs="0" name="timeout" type="xs:integer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConfigData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="_configData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

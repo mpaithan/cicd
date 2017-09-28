@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:ns2="http://www.tibco.com/pe/EngineTypes" xmlns:ns3="http://soa.coe.com/CommonTypes/Mediation/MsgHeader" xmlns:ns4="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd" xmlns:pfx2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pfx3="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:pfx4="http://soa.coe.com/CommonTypes/Mediation/xmlMsg" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/MsgDistribution/serviceRouting/DegroupMsgSync-End-Output.xsd">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" schemaLocation="../../../../CORE_COMMON/Resources/Schemas/ErrorHandling/BWException.xsd"/>
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/xmlMsg" schemaLocation="../../../../CORE_COMMON/Resources/Schemas/Messaging/XmlMsg.xsd"/>
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" name="Output">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="serviceCodeTargetted" type="xsd:string"/>
+                            <xsd:element name="BodySent" type="xsd:string"/>
+                            <xsd:element name="status" type="xsd:string"/>
+                            <xsd:element name="failureReason" type="xsd:string"/>
+                            <xsd:element minOccurs="0" ref="pfx4:xmlMsg"/>
+                            <xsd:element minOccurs="0" ref="pfx3:bwException"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

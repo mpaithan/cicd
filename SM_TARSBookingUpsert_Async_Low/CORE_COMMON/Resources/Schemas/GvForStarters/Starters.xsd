@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://soa.coe.com/CommonTypes/Mediation/Framework/GVForStarters/Starters.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soa.coe.com/CommonTypes/Mediation/Framework/GVForStarters/Starters.xsd">
+	<xs:element name="StarterList" type="StarterList_type"/>
+	<xs:element name="Starter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProcessFullPath"/>
+				<xs:element minOccurs="0" ref="Name"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProcessFullPath" type="xs:string"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:complexType name="StarterList_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" ref="Starter"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

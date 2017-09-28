@@ -1,0 +1,26 @@
+Manifest-Version: 1.0.0.qualifier
+Bundle-SymbolicName: SM_TARSBookingUpsert_Async_Low
+Bundle-ManifestVersion: 2
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Import-Package: com.tibco.bw.palette.java.runtime,com.tibco.bw.runtime
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tib
+ co.bw.palette; filter:="(name=bw.generalactivities)",com.tibco.bw.pal
+ ette; filter:="(name=bw.jdbc)",com.tibco.bw.palette; filter:="(name=b
+ w.file)",com.tibco.bw.palette; filter:="(name=bw.restjson)",com.tibco
+ .bw.palette; filter:="(name=bw.java)",com.tibco.bw.palette; filter:="
+ (name=bw.jms)",com.tibco.bw.palette; filter:="(name=bw.xml)",com.tibc
+ o.bw.palette; filter:="(name=bw.parse)",com.tibco.bw.sharedresource.m
+ odel; filter:="(name=bw.dataformat)",com.tibco.bw.sharedresource.mode
+ l; filter:="(name=bw.httpconnector)",com.tibco.bw.sharedresource.mode
+ l; filter:="(name=bw.jdbc)",com.tibco.bw.sharedresource.model; filter
+ :="(name=bw.jmsconnection)",com.tibco.bw.sharedresource.model; filter
+ :="(name=bw.jndiconfiguration)"
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 6.4.0 V29 2017-05-09
+Bundle-Name: SM_TARSBookingUpsert_Async_Low
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .,.,.,.,.,.
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+

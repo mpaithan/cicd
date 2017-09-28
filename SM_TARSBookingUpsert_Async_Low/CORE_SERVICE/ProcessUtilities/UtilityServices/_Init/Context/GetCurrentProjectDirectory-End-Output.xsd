@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ns="www.tibco.com/plugin/Sleep" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/UtilityServices/_Init/Context/GetCurrentProjectDirectory-End-Output.xsd">
+    <xsd:element name="currentProjectPath" type="xsd:string"/>
+</xsd:schema>

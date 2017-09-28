@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.soa.coe.net/TrancoTables/TranscoList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.soa.coe.net/TrancoTables/TranscoList.xsd">
+	<xs:complexType name="transcoListType">
+		<xs:sequence>
+			<xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="List" type="transcoListType"/>
+	<xs:complexType name="transcoNodeType">
+		<xs:sequence>
+			<xs:element name="alias" type="xs:string"/>
+			<xs:choice>
+				<xs:element ref="File"/>
+				<xs:element ref="Database"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="databaseType">
+		<xs:sequence>
+			<xs:element name="url" type="xs:string"/>
+			<xs:element name="driver" type="xs:string"/>
+			<xs:element name="table" type="xs:string"/>
+			<xs:element name="keyField" type="xs:string"/>
+			<xs:element name="valueField" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fileType">
+		<xs:sequence>
+			<xs:element name="fileName" type="xs:string"/>
+			<xs:element name="dataformat" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="File" type="fileType"/>
+	<xs:element name="Database" type="databaseType"/>
+</xs:schema>

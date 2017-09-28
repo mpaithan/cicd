@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:BW="java://com.tibco.pe.core.JavaCustomXPATHFunctions" xmlns:bwCoreStat="java://com.tibco.tibcobw.customfunctions.BwStatCustomFunctions" xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns0="www.tibco.com/plugin/Sleep" xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:ns2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:ns3="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:ns4="http://www.tibco.com/namespaces/tnt/plugins/jms" xmlns:ns5="http://soa.coe.com/CommonTypes/Mediation/MsgHeader" xmlns:ns6="http://www.tibco.com/pe/EngineTypes" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://soa.coe.com/infra/mediation/CommonServices/StatEvent" xmlns:pfx2="http://soa.coe.com/CommonTypes/Mediation/xmlMsg" xmlns:pfx3="http://soa.coe.com/infra/mediation/CommonServices/StatEventBegin" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:tns="/CORE_STAT/ProcessUtilities/Shared/Statistic/CORESTAT_BEGIN.process/GenData" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/CORE_STAT/ProcessUtilities/Shared/Statistic/CORESTAT_BEGIN.process/GenData">
+    <xsd:element name="genData">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="host" type="xsd:string"/>
+                <xsd:element name="correlationId" type="xsd:string"/>
+                <xsd:element name="utcTS" type="xsd:long"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

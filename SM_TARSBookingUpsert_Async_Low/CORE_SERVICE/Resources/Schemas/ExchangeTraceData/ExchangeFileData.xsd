@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeFileData/Schema.xsd" xmlns:CTMF="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeFileData/Schema.xsd">
+
+	<!--***-->
+	<xs:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+	<xs:complexType name="Exchange_File_Data_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="Line"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExchangeFileData" type="Exchange_File_Data_type"/>
+	<xs:complexType name="Line_type">
+		<xs:sequence>
+			<xs:element ref="ExchangeCode"/>
+			<xs:element ref="ServiceCode"/>			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Line" type="Line_type"/>
+	<xs:element name="ExchangeCode" type="CTMF:exchange_code_type"/>
+	<xs:element name="ServiceCode" type="CTMF:service_code_type"/>	
+</xs:schema>

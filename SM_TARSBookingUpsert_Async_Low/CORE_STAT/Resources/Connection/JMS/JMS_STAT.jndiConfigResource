@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://xsd.tns.tibco.com/bw/models/sharedresource/jms" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_XgKAsJcREeeOzMRxLKEo5A" name="CORE_STAT.Resources.Connection.JMS.JMS_STATJNDI" type="jms:JNDIConnection">
+  <jndi:configuration xsi:type="jms:JNDIConnectionConfiguration" xmi:id="_XgKAsZcREeeOzMRxLKEo5A" initialContextFactory="%%CORE_STAT/SharedConnections/JMS/EMS_STAT/jndiContextFactory%%" providerUrl="%%CORE_STAT/SharedConnections/JMS/EMS_STAT/url%%">
+    <substitutionBindings xmi:id="_XgNrEJcREeeOzMRxLKEo5A" template="initialContextFactory" propName="CORE_STAT/SharedConnections/JMS/EMS_STAT/jndiContextFactory"/>
+    <substitutionBindings xmi:id="_XgPgQJcREeeOzMRxLKEo5A" template="providerUrl" propName="CORE_STAT/SharedConnections/JMS/EMS_STAT/url"/>
+    <userCredentials xmi:id="_XgKAspcREeeOzMRxLKEo5A" username="%%CORE_STAT/SharedConnections/JMS/EMS_STAT/user%%" password="%%CORE_STAT/SharedConnections/JMS/EMS_STAT/password%%">
+      <substitutionBindings xmi:id="_XgRVcJcREeeOzMRxLKEo5A" template="username" propName="CORE_STAT/SharedConnections/JMS/EMS_STAT/user"/>
+      <substitutionBindings xmi:id="_XgTKoJcREeeOzMRxLKEo5A" template="password" propName="CORE_STAT/SharedConnections/JMS/EMS_STAT/password"/>
+    </userCredentials>
+  </jndi:configuration>
+</jndi:namedResource>

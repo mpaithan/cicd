@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsv:DocumentRoot xmlns:jsv="http://tns.tibco.com/bw/model/core/jobSV">
+  <jobSharedVariables>
+    <jobSharedVariable name="CORE_SERVICE.Resources.Variables.Job.ProcessContextMsgBody" type="{http://tns.tibco.com/bw/model/core/jobSV/9056491e-07ee-4a3a-a451-7be822b839fe}root" initialValueMode="none"/>
+    <jobSharedVariable name="CORE_STAT.Resources.Variables.JobShared.CORESTAT_GUID" type="{http://tns.tibco.com/bw/model/core/jobSV/983796eb-7ebf-4953-9cf1-8f7db96a3ea5}corestat" initialValueMode="none"/>
+    <jobSharedVariable name="CORE_SERVICE.Resources.Variables.Job.ProcessContext" type="{http://tns.tibco.com/bw/model/core/jobSV/1c6d3ff3-5c7d-4c2a-9519-7c932aacba1d}root" initialValueMode="none"/>
+  </jobSharedVariables>
+  <xMLNSPrefixMap key="ns" value="http://tns.tibco.com/bw/model/core/jobSV/1c6d3ff3-5c7d-4c2a-9519-7c932aacba1d"/>
+  <xMLNSPrefixMap key="ns1" value="http://tns.tibco.com/bw/model/core/jobSV/9056491e-07ee-4a3a-a451-7be822b839fe"/>
+  <xMLNSPrefixMap key="ns2" value="http://tns.tibco.com/bw/model/core/jobSV/983796eb-7ebf-4953-9cf1-8f7db96a3ea5"/>
+  <xSISchemaLocation key="http://tns.tibco.com/bw/model/core/jobSV/1c6d3ff3-5c7d-4c2a-9519-7c932aacba1d" value="file:/d:/Studies/Migration_BW6/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/Resources/Variables/Job/ProcessContext.xsd"/>
+  <xSISchemaLocation key="http://tns.tibco.com/bw/model/core/jobSV/9056491e-07ee-4a3a-a451-7be822b839fe" value="file:/d:/Studies/Migration_BW6/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/Resources/Variables/Job/ProcessContextMsgBody.xsd"/>
+  <xSISchemaLocation key="http://tns.tibco.com/bw/model/core/jobSV/983796eb-7ebf-4953-9cf1-8f7db96a3ea5" value="file:/d:/Studies/Migration_BW6/SM_TARSBookingUpsert_Async_Low/CORE_STAT/Resources/Variables/JobShared/CORESTAT_GUID.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/model/core/jobSV/1c6d3ff3-5c7d-4c2a-9519-7c932aacba1d" location="../CORE_SERVICE/Resources/Variables/Job/ProcessContext.xsd"/>
+</jsv:DocumentRoot>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns0="www.tibco.com/plugin/Sleep" xmlns:ns1="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:ns11="http://www.tibco.com/pe/EngineTypes" xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/jms" xmlns:ns21="com/tibco/pe/commands" xmlns:ns3="http://www.sonepar.com/CommonTypes/Mediation/Framework/BWException" xmlns:ns4="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:ns5="http://soa.coe.com/CommonTypes/Mediation/Framework/ProcessStatus" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx3="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pfx5="http://xmlns.example.com/unique/default/namespace/1153478563057" xmlns:pfx6="http://xmlns.example.com/unique/default/namespace/1107422608823" xmlns:pfx8="http://www.tibco.com/PSG/Service/FrameWork/XSD/Error/1.0" xmlns:pfx9="http://www.tibco.com/PSG/Service/Framework/XSD/1.0" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_COMMON/ProcessUtilities/ConnectionTests/DBMS/DB/SimpleDBTest-End-Output.xsd">
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Result" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="bwExceptionStackTrace" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

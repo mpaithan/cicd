@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:ns="PerfTester" xmlns:ns0="com/tibco/pe/commands" xmlns:ns1="Tester" xmlns:ns12="pmu" xmlns:ns2="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:ns3="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns4="http://www.tibco.com/pe/EngineTypes" xmlns:ns5="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:tns="/CORE_COMMON/ProcessUtilities/Starters/ResumeStarters.process/Starter-Status" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/CORE_COMMON/ProcessUtilities/Starters/ResumeStarters.process/Starter-Status">
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Starter">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Name" type="xsd:string"/>
+                            <xsd:element name="isResumed" type="xsd:boolean"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns0="www.tibco.com/plugin/Sleep" xmlns:ns10="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:ns11="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:ns112="http://soa.coe.com/infra/mediation/CommonServices/LogEvent" xmlns:ns12="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:ns2="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:ns6="pfx4" xmlns:ns8="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/LoggingPolicies/LogTxt-Start-Input.xsd">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" schemaLocation="../../Resources/Schemas/ProcessContext/StdProcessContext.xsd"/>
+    <xsd:import namespace="http://soa.coe.com/infra/mediation/CommonServices/LogEvent" schemaLocation="../../../CORE_LOG/Resources/Schemas/Log/LogEvent.xsd"/>
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework" schemaLocation="../../../CORE_COMMON/Resources/Schemas/CommonTypes/CommonFrameworkTypes.xsd"/>
+    <xsd:element name="in">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="logText" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="logLongText" type="xsd:string"/>
+                <xsd:element name="logRole" type="ns112:log_role_type"/>
+                <xsd:element minOccurs="0" name="customStep" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="logCode" type="xsd:string"/>
+                <xsd:element minOccurs="0" ref="ns11:applicationContext"/>
+                <xsd:element minOccurs="0" ref="ns11:technicalContext"/>
+                <xsd:element minOccurs="0" name="enableRemediationLookup" type="xsd:boolean"/>
+                <xsd:element minOccurs="0" name="dynamicRemediationData" type="ns2:dynamic_remediation_data_type"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://soa.coe.com/CommonTypes/Mediation/MsgHeader"
+	xmlns:CTMF="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://soa.coe.com/CommonTypes/Mediation/MsgHeader">
+
+	<!--***-->
+
+	<xs:import schemaLocation="../CommonTypes/MsgHeaderTypes.xsd" namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes"></xs:import>
+	<xs:element name="msgHeader" type="ESB_msg_header_type" />
+	<xs:complexType name="ESB_msg_header_type">
+		<xs:sequence>
+			<xs:element name="eventId" nillable="true"
+				type="CTMF:event_id_type" />
+			<xs:element name="timeStamp" nillable="true"
+				type="xs:dateTime" />
+			<xs:element name="source" type="CTMF:source_system_type" />
+			<xs:element name="priority" nillable="true" type="xs:int" />
+			<xs:element name="exchangeId" nillable="true"
+				type="CTMF:exchange_id_type" />
+			<xs:element name="serviceId" nillable="true"
+				type="CTMF:service_id_type" />
+			<xs:element name="exchangeCode" nillable="true"
+				type="CTMF:exchange_code_type" />
+			<xs:element name="serviceCode" nillable="true"
+				type="CTMF:service_code_type" />
+			<xs:element minOccurs="0" name="operation" nillable="true"
+				type="CTMF:operation_type" />
+			<xs:element name="trace" nillable="true"
+				type="CTMF:trace_type" />
+			<xs:element name="isReplay" nillable="true"
+				type="CTMF:is_replay_type" />
+			<xs:element name="weight" nillable="true" type="xs:int" />
+			<xs:element minOccurs="0" name="transactionId"
+				type="CTMF:transaction_id_type" />
+			<xs:element minOccurs="0" name="correlationId"
+				type="CTMF:correlation_id_type" />
+			<xs:element name="privateCtxt" nillable="true"
+				type="CTMF:sequence_any_type" />
+			<xs:element name="batchInfo" nillable="true"
+				type="CTMF:batch_info_type" />
+			<xs:element name="extendedCtx" nillable="true"
+				type="CTMF:sequence_any_type" />
+			<xs:element name="exchangeHistory" nillable="true"
+				type="CTMF:sequence_any_type" />
+			<xs:element name="exchangeVersion" nillable="true"
+				type="CTMF:version_type" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ns="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/HistoryManagement/GetFunctionalComponentContext-End-Output.xsd" xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+    <xsd:element name="FunctionalContext" type="pfx:sequence_any_type"/>
+</xsd:schema>

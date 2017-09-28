@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.soa.coe.net/CommonTypes/Mediation/StatusData" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.soa.coe.net/CommonTypes/Mediation/StatusData">
+	<xs:element name="statusContext" type="status_context_type"/>
+	<xs:complexType name="status_context_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="status">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="service" type="xs:string"/>
+						<xs:element ref="confidenceRate"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element default="100" name="confidenceRate">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="0"/>
+				<xs:maxInclusive value="100"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

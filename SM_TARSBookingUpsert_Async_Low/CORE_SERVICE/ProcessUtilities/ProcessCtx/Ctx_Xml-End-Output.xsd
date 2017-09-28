@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:ns="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/MsgHeader" xmlns:ns11="http://schemas.dg.dexwired.net/GEDC_MESSAGING/MsgHeaders/MsgDCSFHeader" xmlns:ns12="http://schemas.dg.dexwired.net/FIIP_COMMON/ProcessContext/StdProcessContext.xsd" xmlns:ns2="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns22="http://schemas.dg.dexwired.net/FIIP_COMMON/Messaging/StdSoapHeader" xmlns:ns3="http://www.tibco.com/pe/EngineTypes" xmlns:ns31="http://schemas.dg.dexwired.net/GEDC_CS_AUDITLOGGING/ErrorHandling/BuildError" xmlns:ns4="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:ns5="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:ns7="http://soa.coe.com/CommonTypes/Mediation/SoapContext" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://schemas.dg.dexwired.net/GEDC_CS_AUDITLOGGING/ErrorHandling/BWException" xmlns:pfx1="http://soa.coe.com/infra/mediation/CommonServices/LogEvent" xmlns:pfx3="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:pfx4="http://soa.coe.com/CommonTypes/Mediation/xmlMsg" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/ProcessCtx/Ctx_Xml-End-Output.xsd" xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework" schemaLocation="../../../CORE_COMMON/Resources/Schemas/CommonTypes/CommonFrameworkTypes.xsd"/>
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" schemaLocation="../../Resources/Schemas/ProcessContext/StdProcessContext.xsd"/>
+    <xsd:element name="Output">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="pfx3:processContext"/>
+                <xsd:element minOccurs="0" name="anyBody">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:any namespace="##any" processContents="skip"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="D:/AccorHotels/Jar/engine.jar"/>
+	<classpathentry kind="lib" path="D:/AccorHotels/Jar/jms-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/AccorHotels/Jar/text-diff-1.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/AccorHotels/Jar/tibjms.jar"/>
+	<classpathentry kind="lib" path="D:/AccorHotels/Jar/tibjmsadmin.jar"/>
+	<classpathentry kind="lib" path="D:/AccorHotels/Jar/xml-diff-1.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/AccorHotels/Jar/xmlunit-1.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

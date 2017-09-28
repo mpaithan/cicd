@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:tns="/CORE_COMMON/ProcessUtilities/SysUnavailability/CheckSysSoapHttp.process/Map" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/CORE_COMMON/ProcessUtilities/SysUnavailability/CheckSysSoapHttp.process/Map">
+    <xsd:element name="map">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="sysUnavailable" type="xsd:boolean"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

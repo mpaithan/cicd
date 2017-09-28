@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:customString="java://com.tibco.tibcobw.customfunctions.FString" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns0="www.tibco.com/plugin/Sleep" xmlns:ns10="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:ns11="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:ns112="http://soa.coe.com/infra/mediation/CommonServices/LogEvent" xmlns:ns12="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:ns2="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:ns6="pfx4" xmlns:ns8="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.faizsiegeln.com/njams" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/LoggingPolicies/LogOnExit-Start-Input.xsd">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" schemaLocation="../../Resources/Schemas/ProcessContext/StdProcessContext.xsd"/>
+    <xsd:element name="in">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" name="logText" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="logCode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="isEndExchange" type="xsd:boolean"/>
+                <xsd:element minOccurs="0" ref="ns11:applicationContext"/>
+                <xsd:element minOccurs="0" ref="ns11:technicalContext"/>
+                <xsd:element minOccurs="0" name="payload" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

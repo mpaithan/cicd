@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://soa.coe.com/CommonTypes/Mediation/SoapContext" xmlns:CTMF="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" xmlns:MH="http://soa.coe.com/CommonTypes/Mediation/MsgHeader_simple" xmlns:PC="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soa.coe.com/CommonTypes/Mediation/SoapContext" xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/MsgHeader_simple" xmlns:pref1="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+
+	<!--***-->
+	<xs:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+	<xs:import namespace="http://soa.coe.com/CommonTypes/Mediation/MsgHeader_simple" schemaLocation="../../../../CORE_COMMON/Resources/Schemas/Messaging/MsgHeader_simple.xsd"/>
+	<xs:import namespace="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" schemaLocation="../ProcessContext/StdProcessContext.xsd"/>
+	<xs:element name="soapContext" type="soap_context_type"/>
+	<xs:complexType name="soap_context_type">
+		<xs:sequence>
+			<xs:element ref="MH:msgHeader_simple"/>
+			<xs:element ref="PC:msgProperties"/>
+			<xs:element ref="PC:otherSoapHeaders"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:ns2="http://www.tibco.com/pe/EngineTypes" xmlns:ns3="http://soa.coe.com/CommonTypes/Mediation/MsgHeader" xmlns:ns4="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd" xmlns:pfx2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pfx3="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:pfx4="http://soa.coe.com/CommonTypes/Mediation/xmlMsg" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/MsgDistribution/serviceRouting/SendUnitSync-Start-Input.xsd">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" name="overwrite_div_factor" type="xsd:int"/>
+                <xsd:element name="Destination">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Target">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="ServiceCode" type="xsd:string"/>
+                                        <xsd:element minOccurs="0" name="Operation" type="xsd:string"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="overwriteMsgPriority" type="xsd:int"/>
+                            <xsd:element minOccurs="0" name="overwriteMsgId" type="ns4:event_id_type"/>
+                            <xsd:element minOccurs="0" name="overwriteTransactionId" type="ns4:transaction_id_type"/>
+                            <xsd:element minOccurs="0" name="batchInfo">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="propagateFromContext" type="xsd:boolean"/>
+                                        <xsd:element minOccurs="0" name="overwriteBatchInfo" type="ns4:batch_info_type"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="correlationId" type="ns4:correlation_id_type"/>
+                            <xsd:element minOccurs="0" name="privateContext">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="propagateFromContext" type="xsd:boolean"/>
+                                        <xsd:element minOccurs="0" name="overwritePrivateCtx" type="ns4:sequence_any_type"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="JmsRequestTimeout" type="xsd:int"/>
+                            <xsd:element minOccurs="0" name="replyToQueue" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="JMSExpiration" type="xsd:int"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="BodyToSend">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:any namespace="##any" processContents="skip"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

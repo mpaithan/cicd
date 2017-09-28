@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soa.coe.com/CommonTypes/Mediation/Framework">
+
+	<!--***-->
+	<!--***************************************************************************-->
+	<!--	TYPES  SHARED IN Service framework including		-->
+	<!--	messaging headers, process context, exception handling 		-->
+	<!--	and logging											-->
+	<!--***************************************************************************-->
+	<!--***-->
+	<xs:complexType name="component_type">
+		<xs:sequence>
+			<xs:element name="component" type="component_name_type"/>
+			<xs:element name="instanceId" type="component_instance_id_type"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:simpleType name="component_name_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="component_instance_id_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="16"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="transaction_name_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="context_id_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:complexType name="nvp_list_type">
+		<xs:sequence>
+			<xs:element name="nvpList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="nvpElement" type="nvp_element_type"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="nvp_short_list_type">
+		<xs:sequence>
+			<xs:element name="nvpList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="nvpElement" type="nvp_short_element_type"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="nvp_element_type">
+		<xs:attribute name="name" type="nvp_element_name_type" use="required"/>
+		<xs:attribute name="value" type="nvp_element_value_type" use="required"/>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="nvp_short_element_type">
+		<xs:attribute name="name" type="nvp_element_name_type" use="required"/>
+		<xs:attribute name="value" type="nvp_element_short_value_type" use="required"/>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:simpleType name="nvp_element_name_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+	<!--***-->
+	<xs:simpleType name="nvp_element_value_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="2048"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="nvp_element_short_value_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="process_full_path">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1024"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="process_path">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="log_code_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="messaging_type_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="XMLMSG_JMS"/>
+			<xs:enumeration value="SOAP_JMS"/>
+			<xs:enumeration value="SOAP_HTTP"/>
+			<xs:enumeration value="GEN_GEN"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="exception_type_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="T"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--*** Severity 1 is highest-->
+	<xs:simpleType name="exception_severity_type">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="resubmission_indicator_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:complexType name="soap_headers_type">
+		<xs:sequence>
+			<xs:any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+		</xs:sequence>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:simpleType name="xml_msg_action_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="dynamic_remediation_data_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="remediationProp" type="nvp_list_type"/>
+			<xs:element minOccurs="0" name="Data">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:any namespace="##any" processContents="skip"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="InputData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:any namespace="##any" processContents="lax"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OutputData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:any namespace="##any" processContents="lax"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReceivedBody">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:any namespace="##any" processContents="lax"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

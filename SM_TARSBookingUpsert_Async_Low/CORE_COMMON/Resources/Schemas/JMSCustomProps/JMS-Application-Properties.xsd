@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ns.tibco.com/jms/appProp/JMSApplicationProperties" targetNamespace="http://ns.tibco.com/jms/appProp/JMSApplicationProperties">
+  <complexType name="JMSApplicationProperties">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="JMS_TIBCO_COMPRESS" type="boolean"/>
+    </sequence>
+  </complexType>
+</schema>

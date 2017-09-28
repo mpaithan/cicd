@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd" xmlns:pfx2="http://www.tibco.com/pe/DeployedVarsType" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/ManageTraceData/subprocess/ManageExchangeTraceDataStatus-End-Output.xsd">
+    <xsd:import namespace="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd" schemaLocation="../../../Resources/Schemas/ExchangeTraceData/ExchangeTraceData.xsd"/>
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" name="returncode" type="xsd:string"/>
+                <xsd:element minOccurs="0" ref="pfx:ExchangeTraceData"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

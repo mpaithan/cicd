@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/GetContext/" targetNamespace="http://www.example.org/GetContext/" xmlns:Q1="http://soa.coe.com/CommonTypes/Mediation/SoapContext">
+    <import namespace="http://soa.coe.com/CommonTypes/Mediation/SoapContext" schemaLocation="../../Resources/Schemas/SoapContext/SoapContext.xsd"></import>
+    <element name="soapContext" type="Q1:soap_context_type"></element>
+
+</schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:ns2="http://soa.coe.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/ExchangeTraceDataCount.xsd" xmlns:ns3="http://www.tibco.com/pe/EngineTypes" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:tns="/CORE_SERVICE/ProcessUtilities/UtilityServices/_Starters/TrancoTables/OnStarterLoadTranscoTables.process/Map-GV-to-any" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/CORE_SERVICE/ProcessUtilities/UtilityServices/_Starters/TrancoTables/OnStarterLoadTranscoTables.process/Map-GV-to-any">
+    <xsd:element name="bogusroot">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:any namespace="##any" processContents="skip"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ns.tibco.com/jms/appProp/TARSHeader_JMSProperties" targetNamespace="http://ns.tibco.com/jms/appProp/TARSHeader_JMSProperties">
+  <complexType name="TARSHeader_JMSProperties">
+    <sequence>
+      <element maxOccurs="1" minOccurs="0" name="filename" type="string"/>
+      <element maxOccurs="1" minOccurs="0" name="encoding" type="string"/>
+      <element maxOccurs="1" minOccurs="0" name="timestamp" type="string"/>
+    </sequence>
+  </complexType>
+</schema>

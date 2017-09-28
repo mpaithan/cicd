@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tns.tibco.com/bw/model/core/jobSV/983796eb-7ebf-4953-9cf1-8f7db96a3ea5">
+    <xsd:element name="corestat">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="guid" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

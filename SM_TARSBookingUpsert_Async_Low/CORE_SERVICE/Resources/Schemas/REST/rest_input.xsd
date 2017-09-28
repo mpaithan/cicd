@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://com.tibco.schemas/rest/standard/input" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://com.tibco.schemas/rest/standard/input">
+	<xs:element name="InputData">
+		<xs:complexType>
+			<xs:sequence>
+
+				<!-- HTTP method used by the client (GET, POST, PUT, DELETE...) -->
+				<xs:element name="Method" type="xs:string"/>
+
+				<!-- Resources defined in the URI *after* the base URI (e.g. "Hello" and "123" are 2 resources in the following URI: "/MyBaseURI/Hello/123") -->
+				<!-- A resource can be an object (e.g. clients) or an id of an object (e.g. 123) -->
+				<xs:element minOccurs="0" name="Resources">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="Resource">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" type="xs:string"/>
+										<xs:element name="Value" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<!-- Query parameters located either in the URI in the form "?a=1&b=2..." or in the body of the request -->
+				<xs:element minOccurs="0" name="Filters">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="Filter">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" type="xs:string"/>
+										<xs:element name="Value" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<!-- Body of the request. The body can be formatted in JSON, XML or anything else, as defined in the Content-Type header -->
+				<xs:element minOccurs="0" name="Headers">
+					<xs:complexType>
+						<xs:sequence>
+                        <xs:element minOccurs="0" name="Accept" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Accept-Charset" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Accept-Encoding" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Content-Type" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Content-Length" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Connection" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Cookie" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Pragma" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<!-- Custom header in the HTTP Request -->
+				<xs:element minOccurs="0" name="DynamicHeaders">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="Header">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" type="xs:string"/>
+										<xs:element name="Value" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<!-- Body of the request. The body can be formatted in JSON, XML or anything else, as defined in the Content-Type header -->
+				<xs:element minOccurs="0" name="Body">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="JsonBody" type="xs:string"/>
+							<xs:element name="XmlBody" type="xs:string"/>
+							<xs:element name="OtherBody" type="xs:string"/>
+						</xs:choice>
+						<xs:attribute name="encoding" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+
+				<!-- IP address or host name of the client that sent the request -->
+				<xs:element minOccurs="0" name="RemoteAddress" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

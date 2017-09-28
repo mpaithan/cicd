@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://soa.coe.com/CommonTypes/Mediation/Framework/ProcessStatus" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soa.coe.com/CommonTypes/Mediation/Framework/ProcessStatus">
+	<xs:element name="starterStatus" type="starterStatus_type"/>
+	<xs:complexType name="starterStatus_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="status" type="status_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="status_type">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="CurrentStatus" type="xs:string"/>
+			<xs:element minOccurs="0" name="CurrentStatus_DT" type="xs:string"/>
+			<xs:element minOccurs="0" name="Comment" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

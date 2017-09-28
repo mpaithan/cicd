@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd" xmlns:CTMF="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd" xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+
+	<!--***-->
+	<xs:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+	<xs:complexType name="Exchange_Trace_Data_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="Line"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExchangeTraceData" type="Exchange_Trace_Data_type"/>
+	<xs:complexType name="Line_type">
+		<xs:sequence>
+			<xs:element ref="ExchangeCode"/>
+			<xs:element ref="ServiceCode"/>
+			<xs:element ref="EnableTracing"/>
+			<xs:element ref="Log_MsgBody"/>
+			<xs:element ref="Log_MsgConsulting"/>
+			<xs:element minOccurs="0" ref="Log_Component"/>
+			<xs:element minOccurs="0" ref="Log_Component_Error"/>
+			<xs:element minOccurs="0" ref="Set_Start_Exchange"/>
+			<xs:element minOccurs="0" ref="Set_End_Exchange"/>
+			<xs:element minOccurs="0" ref="Set_Error_Exchange"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Line" type="Line_type"/>
+	<xs:element name="ExchangeCode" type="CTMF:exchange_code_type"/>
+	<xs:element name="ServiceCode" type="CTMF:service_code_type"/>
+	<xs:element name="EnableTracing" type="CTMF:enable_tracing_type"/>
+	<xs:element name="Log_MsgBody" type="CTMF:log_msg_body_type"/>
+	<xs:element name="Log_MsgConsulting" type="CTMF:log_msg_consulting_type"/>
+	<xs:element name="Log_Component" type="CTMF:log_component_type"/>
+	<xs:element name="Log_Component_Error" type="CTMF:log_component_error_type"/>
+	<xs:element name="Set_Start_Exchange" type="CTMF:start_ech_type"/>
+	<xs:element name="Set_End_Exchange" type="CTMF:end_ech_type"/>
+	<xs:element name="Set_Error_Exchange" type="CTMF:set_ech_error_type"/>
+</xs:schema>

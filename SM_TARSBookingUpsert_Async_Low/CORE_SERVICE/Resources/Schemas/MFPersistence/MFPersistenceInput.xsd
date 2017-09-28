@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/MFPersistence/MFPersistenceInput.xsd" xmlns:CTMF="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/MFPersistence/MFPersistenceInput.xsd" xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+	<xs:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+	<xs:complexType name="MF_In_type">
+		<xs:sequence>
+			<xs:element ref="StoreType"/>
+			<xs:element minOccurs="0" ref="Store"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MF_Out_type">
+		<xs:sequence>
+			<xs:element ref="PersistenceStatus"/>
+			<xs:element minOccurs="0" ref="MFcorrelationID"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="StoreDirectory" type="xs:string"/>
+	<xs:element name="StoreFilename" type="xs:string"/>
+	<xs:element name="StoreTable" type="xs:string"/>
+	<xs:element name="StoreTableRow" type="xs:string"/>
+	<xs:element name="StoreType">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="DataBase"/>
+				<xs:enumeration value="FileSystem"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="MFcorrelationID" type="xs:string"/>
+	<xs:complexType name="DBStoreInfo_type">
+		<xs:sequence>
+			<xs:element ref="StoreTable"/>
+			<xs:element ref="StoreTableRow"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FSStoreInfo_type">
+		<xs:sequence>
+			<xs:element ref="StoreDirectory"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Store_type">
+		<xs:choice>
+			<xs:element ref="DBStoreInfo"/>
+			<xs:element ref="FSStoreInfo"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="In" type="MF_In_type"/>
+	<xs:element name="Out" type="MF_Out_type"/>
+	<xs:element name="Import_Input" type="MF_Out_type"/>
+	<xs:element name="DBStoreInfo" type="DBStoreInfo_type"/>
+	<xs:element name="FSStoreInfo" type="FSStoreInfo_type"/>
+	<xs:element name="Store" type="Store_type"/>
+	<xs:element name="LoadStatus">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="HistoryReloaded"/>
+				<xs:enumeration value="HistoryNotReloaded"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="PersistenceStatus">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="NotPersisted"/>
+				<xs:enumeration value="Persisted"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="LoadHistDataInput" type="LoadHistDataInput_type"/>
+	<xs:complexType name="LoadHistDataInput_type">
+		<xs:sequence>
+			<xs:element ref="MFcorrelationID"/>
+			<xs:element minOccurs="0" ref="Store"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LoadHistDataOutput" type="LoadHistDataOutput_type"/>
+	<xs:complexType name="LoadHistDataOutput_type">
+		<xs:sequence>
+			<xs:element ref="LoadStatus"/>
+			<xs:element name="History" nillable="true" type="CTMF:History_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="directoryPath" type="xs:string"/>
+	<xs:element name="fullFilePath" type="xs:string"/>
+	<xs:element name="DeleteDirectory_IN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="directoryPath"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeleteFiles_IN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="directoryPath"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="fullFilePath"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

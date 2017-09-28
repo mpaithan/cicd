@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msv:DocumentRoot xmlns:msv="http://tns.tibco.com/bw/model/core/moduleSV">
+  <moduleSharedVariables>
+    <moduleSharedVariable name="CORE_COMMON.Resources.Variables.Shared.StarterList" type="{http://soa.coe.com/CommonTypes/Mediation/Framework/GVForStarters/Starters.xsd}StarterList" initialValueMode="none"/>
+    <moduleSharedVariable name="CORE_COMMON.Resources.Variables.Shared.StarterStatusInfos" type="{http://soa.coe.com/CommonTypes/Mediation/Framework/ProcessStatus}starterStatus" initialValueMode="none"/>
+    <moduleSharedVariable name="CORE_LOG.Resources.Variables.Shared.Shutdown.Shutdown" type="{http://tns.tibco.com/bw/model/core/moduleSV/44622b19-c3ac-4823-987f-6d9e42d94e3e}root" initialValueMode="literal" initialValue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;ns0:root xmlns:ns0=&quot;http://tns.tibco.com/bw/model/core/moduleSV/44622b19-c3ac-4823-987f-6d9e42d94e3e&quot;>&#xA;    &lt;shutdownRequested>false&lt;/shutdownRequested>&#xA;&lt;/ns0:root>"/>
+    <moduleSharedVariable name="CORE_SERVICE.Resources.Variables.Locks.LockExchangeTraceData" type="{http://www.w3.org/2001/XMLSchema}string" initialValueMode="none"/>
+    <moduleSharedVariable name="CORE_SERVICE.Resources.Variables.Locks.LockServiceCodeCache" type="{http://www.w3.org/2001/XMLSchema}string" initialValueMode="none"/>
+    <moduleSharedVariable name="CORE_SERVICE.Resources.Variables.Shared.ComponentChain" type="{http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd}ComponentChainList" initialValueMode="literal" initialValue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?> &lt;ns0:ComponentChainList xmlns:ns0=&quot;http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd&quot;>        &lt;/ns0:ComponentChainList>"/>
+    <moduleSharedVariable name="CORE_SERVICE.Resources.Variables.Shared.Exchange_tracedata" type="{http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd}ExchangeTraceData" initialValueMode="literal" initialValue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?> &lt;ns0:ExchangeTraceData xmlns:ns0=&quot;http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd&quot;>     &lt;ns0:Line>         &lt;ns0:ExchangeCode>DEFAULT_EXCHANGE_CODE_NEVER_USED&lt;/ns0:ExchangeCode>         &lt;ns0:EnableTracing>TRUE&lt;/ns0:EnableTracing>         &lt;ns0:Log_MsgBody>TRUE&lt;/ns0:Log_MsgBody>         &lt;ns0:Log_MsgConsulting>TRUE&lt;/ns0:Log_MsgConsulting>     &lt;/ns0:Line> &lt;/ns0:ExchangeTraceData>"/>
+    <moduleSharedVariable name="SoapContext_for_GET_CONTEXT" type="{http://www.example.org/GetContext/}soapContext" initialValueMode="none" initialValue=""/>
+    <moduleSharedVariable name="SoapContext_for_GET_CONTEXT_SIMPLE" type="{http://soa.coe.com/CommonTypes/Mediation/SoapContext_simple}soapContext" initialValueMode="none"/>
+  </moduleSharedVariables>
+  <xMLNSPrefixMap key="ns" value="http://soa.coe.com/CommonTypes/Mediation/Framework/GVForStarters/Starters.xsd"/>
+  <xMLNSPrefixMap key="ns1" value="http://soa.coe.com/CommonTypes/Mediation/Framework/ProcessStatus"/>
+  <xMLNSPrefixMap key="ns2" value="http://tns.tibco.com/bw/model/core/moduleSV/44622b19-c3ac-4823-987f-6d9e42d94e3e"/>
+  <xMLNSPrefixMap key="ns3" value="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd"/>
+  <xMLNSPrefixMap key="ns4" value="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd"/>
+  <xSISchemaLocation key="http://soa.coe.com/CommonTypes/Mediation/Framework/GVForStarters/Starters.xsd" value="file:/d:/Studies/Migration_BW6/SM_TARSBookingUpsert_Async_Low/CORE_COMMON/Resources/Schemas/GvForStarters/Starters.xsd"/>
+  <xSISchemaLocation key="http://soa.coe.com/CommonTypes/Mediation/Framework/ProcessStatus" value="file:/d:/Studies/Migration_BW6/SM_TARSBookingUpsert_Async_Low/CORE_COMMON/Resources/Schemas/Status/processstatus.xsd"/>
+  <xSISchemaLocation key="http://tns.tibco.com/bw/model/core/moduleSV/44622b19-c3ac-4823-987f-6d9e42d94e3e" value="file:/d:/Studies/Migration_BW6/SM_TARSBookingUpsert_Async_Low/CORE_LOG/Resources/Variables/Shared/Shutdown/Shutdown.xsd"/>
+  <xSISchemaLocation key="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd" value="file:/d:/Studies/Migration_BW6/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/Resources/Schemas/ComponentChain/ComponentChain.xsd"/>
+  <xSISchemaLocation key="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd" value="file:/d:/Studies/Migration_BW6/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/ExchangeTraceData.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://soa.coe.com/CommonTypes/Mediation/SoapContext" location="../CORE_SERVICE/Resources/Schemas/SoapContext/SoapContext.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/GetContext/" location="../CORE_SERVICE/ProcessUtilities/ProcessCtx/GetContext.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://soa.coe.com/CommonTypes/Mediation/SoapContext_simple" location="../CORE_SERVICE/Resources/Schemas/SoapContext/SoapContext_simple.xsd"/>
+</msv:DocumentRoot>

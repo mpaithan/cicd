@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Data-Format.xsd="http://ns.tibco.com/bw/palette/dataformat/CORE_SERVICE/Resources/DataFormat/Data-Format.xsd" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_W-_NUJcREeeOzMRxLKEo5A" name="CORE_SERVICE.Resources.DataFormat.Data-Format" type="dataformat:DataFormat">
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_W_BCgJcREeeOzMRxLKEo5A" formatType="Delimiter separated" colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" schemaElement="Data-Format.xsd#//root;XSDElementDeclaration" schemaElementQName="Data-Format.xsd:root" lineLength="3" fieldOffsetsStr="Key(0,0)&#xA;Value(0,0)">
+    <substitutionBindings xmi:id="_W_FT8JcREeeOzMRxLKEo5A" template="colSeparator" propName="CORE_SERVICE/ProcessUtilities/Transcodification/Common/KeyValueSeparator"/>
+    <fieldOffsets xmi:id="_W_BCgZcREeeOzMRxLKEo5A" name="Key"/>
+    <fieldOffsets xmi:id="_W_BCgpcREeeOzMRxLKEo5A" name="Value"/>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://soa.coe.com/CommonTypes/Mediation/xmlMsg"
+	xmlns:MH="http://soa.coe.com/CommonTypes/Mediation/MsgHeader"
+	xmlns:ns0="http://soa.coe.com/COMMON/msgHeader"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://soa.coe.com/CommonTypes/Mediation/xmlMsg"
+	xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+
+	<!--***-->
+
+
+	<!--***-->
+
+	<xs:import schemaLocation="MsgHeader.xsd" namespace="http://soa.coe.com/CommonTypes/Mediation/MsgHeader"></xs:import>
+	<xs:element name="xmlMsg">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="msgHeader"
+					type="MH:ESB_msg_header_type" />
+				<xs:element name="Body">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:any namespace="##any"
+								processContents="skip" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:ns12="http://www.tibco.com/namespaces/tnt/plugins/jms" xmlns:ns2="http://www.tibco.com/pe/EngineTypes" xmlns:ns22="http://soa.coe.com/CommonTypes/Mediation/MsgHeader" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd" xmlns:pfx2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pfx3="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:pfx4="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:pfx5="http://soa.coe.com/CommonTypes/Mediation/xmlMsg" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/MsgDistribution/serviceRouting/RouteBack-Start-Input.xsd">
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="BodyToSend">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:any namespace="##any" processContents="skip"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

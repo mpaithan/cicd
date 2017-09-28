@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:pfx="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tns.tibco.com/bw/model/core/jobSV/9056491e-07ee-4a3a-a451-7be822b839fe">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" schemaLocation="..\..\Schemas\ProcessContext\MsgBodyProcessContext.xsd"/>
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="pfx:processContextMsgBody"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

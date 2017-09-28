@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:customString="java://com.tibco.tibcobw.customfunctions.FString" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:ns12="www.tibco.com/plugin/Sleep" xmlns:ns13="http://soa.coe.com/infra/mediation/CommonServices/LogEvent" xmlns:ns5="pfx4" xmlns:ns7="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:ns8="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:ns81="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.faizsiegeln.com/njams" xmlns:pfx2="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/LoggingPolicies/LogOnError-Start-Input.xsd">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" schemaLocation="../../Resources/Schemas/ProcessContext/StdProcessContext.xsd"/>
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" schemaLocation="../../../CORE_COMMON/Resources/Schemas/ErrorHandling/BWException.xsd"/>
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework" schemaLocation="../../../CORE_COMMON/Resources/Schemas/CommonTypes/CommonFrameworkTypes.xsd"/>
+    <xsd:element name="Input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="pfx2:bwException"/>
+                <xsd:element minOccurs="0" ref="ns8:applicationContext"/>
+                <xsd:element minOccurs="0" ref="ns8:technicalContext"/>
+                <xsd:element minOccurs="0" name="disableRemediationLookup" type="xsd:boolean"/>
+                <xsd:element minOccurs="0" name="dynamicRemediationData" type="ns1:dynamic_remediation_data_type"/>
+                <xsd:element minOccurs="0" name="canSetExchangeInError" type="xsd:boolean"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

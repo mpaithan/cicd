@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema
+	xmlns="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException"
+	xmlns:CTMF="http://soa.coe.com/CommonTypes/Mediation/Framework"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException">
+
+	<!--***-->
+
+
+	<!--***-->
+	<xs:import schemaLocation="../CommonTypes/CommonFrameworkTypes.xsd" namespace="http://soa.coe.com/CommonTypes/Mediation/Framework"></xs:import>
+	<xs:element name="bwException" type="bw_exception_type" />
+	<xs:element name="bwBuildError" type="buildError_type" />
+	<xs:element name="bwAutoBuildError" type="autoBuildError_type" />
+	<xs:element name="syncResponseBody" type="sync_response_body_type" />
+
+	<!--***-->
+	<xs:complexType name="bw_exception_type">
+		<xs:sequence>
+			<xs:element name="timeStamp" type="xs:dateTime" />
+			<xs:element name="component" type="CTMF:component_type" />
+			<xs:element name="process" type="process_source_type" />
+			<xs:element name="eventException"
+				type="event_exception_type" />
+			<xs:element minOccurs="0" name="syncResponseBody"
+				type="sync_response_body_type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="sync_response_body_type">
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="skip" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="buildError_type">
+		<xs:sequence>
+			<xs:element name="eventException"
+				type="event_exception_type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="autoBuildError_type">
+		<xs:sequence>
+			<xs:element name="code" type="CTMF:log_code_type" />
+			<xs:element name="stackTrace" nillable="true"
+				type="xs:string" />
+			<xs:element name="inputData" nillable="true"
+				type="xs:string" />
+			<xs:element name="debugData" nillable="true"
+				type="xs:string" />
+			<xs:element name="params" nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="process_source_type">
+		<xs:sequence>
+			<xs:element name="processStack"
+				type="CTMF:process_full_path" />
+			<xs:element name="rootProcessPath" type="CTMF:process_path" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:complexType name="event_exception_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="code"
+				type="CTMF:log_code_type" />
+			<xs:element name="desc" type="xs:string" />
+			<xs:element name="shortDesc" type="xs:string" />
+			<xs:element name="type" type="CTMF:exception_type_type" />
+			<xs:element name="severity"
+				type="CTMF:exception_severity_type" />
+			<xs:element name="stackTrace" nillable="true"
+				type="xs:string" />
+			<xs:element name="inputData" nillable="true"
+				type="xs:string" />
+			<xs:element name="debugData" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema
+	xmlns="http://soa.coe.com/infra/mediation/CommonServices/LogEvent"
+	xmlns:CTMF="http://soa.coe.com/CommonTypes/Mediation/Framework"
+	xmlns:CTMF1="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://soa.coe.com/infra/mediation/CommonServices/LogEvent" xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+
+	<!--****************************************************************************-->
+
+
+	<!--****************************************************************************-->
+
+	<xs:import
+		schemaLocation="../../../../CORE_COMMON/Resources/Schemas/CommonTypes/CommonFrameworkTypes.xsd"
+		namespace="http://soa.coe.com/CommonTypes/Mediation/Framework">
+	</xs:import>
+	<xs:import schemaLocation="../../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd" namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes"></xs:import>
+	<xs:element name="logEvent" type="LE_log_event_type" />
+	<xs:element name="msgContext" nillable="true"
+		type="LE_msg_context_type" />
+	<xs:element name="processException"
+		type="LE_process_exception_type" />
+	<xs:element name="msgProperties" nillable="true"
+		type="CTMF:nvp_list_type" />
+	<xs:element name="msgPrivateCtxt" nillable="true"
+		type="CTMF1:sequence_any_type" />
+
+	<!--****************************************************************************-->
+	<xs:complexType name="LE_log_event_type">
+		<xs:sequence>
+
+			<!-- those commented element are already provided in the msgHeader of  xmlmsg structure-->
+			<!--xs:element name="exchangeId" type="CTMF:exchange_id_type"/>
+				<xs:element name="serviceId" type="CTMF:service_id_type"/>
+				<xs:element name="exchangeCode" type="CTMF:exchange_code_type" nillable="true"/>
+				<xs:element name="serviceCode" type="CTMF:service_code_type" nillable="true"/>
+				<xs:element name="enabletracing" type="CTMF:enable_tracing_type"/>
+				<xs:element name="log_msgbody" type="CTMF:log_msg_body_type"/>
+				<xs:element name="log_msgconsulting" type="CTMF:log_msg_consulting_type"/>
+				<xs:element name="isReplay" type="CTMF:is_replay_type"/> -->
+			<xs:element name="contextId" nillable="true"
+				type="CTMF:context_id_type" />
+			<xs:element name="contextTimeStamp" nillable="true"
+				type="xs:dateTime" />
+			<xs:element name="txt" type="LE_txt_type" />
+			<xs:element minOccurs="0" name="longTxt" nillable="true"
+				type="xs:string" />
+			<xs:element name="top" nillable="true" type="top_type" />
+
+			<!-- those 3 commented element are already provided in the new top type-->
+			<!--<xs:element name="topExchangeStarted" type="xs:string" nillable="true"/>
+				<xs:element name="topExchangeEnded" type="xs:string" nillable="true"/>
+				<xs:element name="topExchangeInError" type="xs:string" nillable="true"/>-->
+			<!-- those commented element are already provided in the msgHeader of  xmlmsg structure-->
+			<!--xs:element name="weight" type="xs:integer" nillable="true"/>-->
+			<xs:element name="logRole" type="log_role_type" />
+			<xs:element minOccurs="0" name="code" nillable="true"
+				type="CTMF:log_code_type" />
+			<xs:element name="remediationLookup" type="xs:boolean" />
+			<xs:element minOccurs="0" name="dynamicRemediationData"
+				nillable="true" type="CTMF:dynamic_remediation_data_type" />
+			<xs:element minOccurs="0" name="customStep" nillable="true"
+				type="LE_custom_step_type" />
+			<xs:element name="component" type="CTMF:component_type" />
+			<xs:element name="mainProcessPath" nillable="true"
+				type="CTMF:process_path" />
+			<xs:element name="processPath" nillable="true"
+				type="CTMF:process_path" />
+			<xs:element minOccurs="0" name="applicationContext"
+				nillable="true" type="CTMF:nvp_list_type" />
+			<xs:element minOccurs="0" name="technicalContext"
+				nillable="true" type="CTMF:nvp_list_type" />
+			<xs:element minOccurs="0" name="msgContext" nillable="true"
+				type="LE_msg_context_type" />
+			<xs:element minOccurs="0" name="msgContextBody"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="msgContextLogConsulting"
+				nillable="true" type="xs:string" />
+
+			<!-- those commented element are already provided in the msgHeader of  xmlmsg structure-->
+			<!--xs:element name="exchangeVersion" type="CTMF:version_type" nillable="true"/>-->
+			<xs:element minOccurs="0" name="componentVersion"
+				nillable="true" type="CTMF1:version_type" />
+
+			<!-- those commented element are already provided in the msgHeader of  xmlmsg structure-->
+			<!--xs:element name="exchangeHistory" type="CTMF:sequence_any_type" nillable="true"/>-->
+			<xs:element minOccurs="0" name="processException"
+				nillable="true" type="LE_process_exception_type" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="top_type">
+		<xs:attribute name="Start" type="xs:string" />
+		<xs:attribute name="End" type="xs:string" />
+		<xs:attribute name="Error" type="xs:string" />
+	</xs:complexType>
+
+	<!--****************************************************************************-->
+	<!-- those commented element are already provided in the msgHeader of  xmlmsg structure-->
+	<!--xs:element name="extendedCtx" type="CTMF:sequence_any_type" nillable="true"/>-->
+	<xs:complexType name="LE_msg_context_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="msgSentTimestamp"
+				nillable="true" type="xs:dateTime" />
+			<xs:element name="messagingType" nillable="true"
+				type="CTMF:messaging_type_type" />
+			<xs:element minOccurs="0" name="msgId" nillable="true"
+				type="CTMF1:event_id_type" />
+			<xs:element minOccurs="0" name="msgPriority" nillable="true"
+				type="xs:int" />
+
+			<!-- those commented element are already provided in the msgHeader of  xmlmsg structure-->
+			<!--		<xs:element name="msgTransactionId" type="CTMF:transaction_id_type" nillable="true"/>-->
+			<!--		<xs:element name="msgCorrelationId" type="CTMF:correlation_id_type" nillable="true"/>-->
+			<xs:element minOccurs="0" name="msgSourceSystem"
+				nillable="true" type="CTMF1:source_system_type" />
+
+			<!-- those commented element are already provided in the msgHeader of  xmlmsg structure-->
+			<!--		<xs:element ref="msgPrivateCtxt"/>-->
+			<xs:element minOccurs="0" ref="msgProperties" />
+
+			<!-- those commented element are already provided in the msgHeader of  xmlmsg structure-->
+			<!--xs:element name="msgBatchInfo" type="CTMF:batch_info_type" nillable="true"/>-->
+			<xs:element minOccurs="0" name="xmlMsgAction"
+				nillable="true" type="CTMF:xml_msg_action_type" />
+			<xs:element minOccurs="0" name="msgResubmitInd"
+				nillable="true" type="CTMF:resubmission_indicator_type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--****************************************************************************-->
+	<xs:complexType name="LE_process_exception_type">
+		<xs:sequence>
+			<xs:element name="timeStamp" type="xs:dateTime" />
+			<xs:element name="component" type="CTMF:component_type" />
+			<xs:element name="process" type="LE_process_source_type" />
+			<xs:element name="exception" type="LE_exception_type" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--****************************************************************************-->
+	<xs:complexType name="LE_process_source_type">
+		<xs:sequence>
+			<xs:element name="processStack"
+				type="CTMF:process_full_path" />
+			<xs:element name="rootProcessPath" type="CTMF:process_path" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--****************************************************************************-->
+	<xs:complexType name="LE_exception_type">
+		<xs:sequence>
+			<xs:element name="code" type="CTMF:log_code_type" />
+			<xs:element name="desc" type="xs:string" />
+			<xs:element name="shortDesc" type="xs:string" />
+			<xs:element name="type" type="CTMF:exception_type_type" />
+			<xs:element name="severity"
+				type="CTMF:exception_severity_type" />
+			<xs:element name="stackTrace" nillable="true"
+				type="xs:string" />
+			<xs:element name="inputData" nillable="true"
+				type="xs:string" />
+			<xs:element name="debugData" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--****************************************************************************-->
+	<!--	SIMPLE TYPES PRIVATE TO THE LOGGER event                                      -->
+	<!--****************************************************************************-->
+	<xs:simpleType name="LE_txt_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="2048" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LE_context_id_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="64" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="LE_custom_step_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="128" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="log_role_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="INFO" />
+			<xs:enumeration value="WARNING" />
+			<xs:enumeration value="ERROR" />
+			<xs:enumeration value="DEBUG" />
+			<xs:enumeration value="ENTRY" />
+			<xs:enumeration value="EXIT" />
+			<xs:enumeration value="CONSULTATION" />
+			<xs:enumeration value="REPLAY" />
+			<xs:enumeration value="PENDING" />
+			<xs:enumeration value="RESUMED" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

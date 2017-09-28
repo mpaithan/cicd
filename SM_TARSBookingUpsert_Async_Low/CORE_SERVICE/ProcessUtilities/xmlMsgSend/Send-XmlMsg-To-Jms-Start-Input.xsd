@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns0="www.tibco.com/plugin/Sleep" xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:ns2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:ns3="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" xmlns:ns4="http://www.tibco.com/namespaces/tnt/plugins/jms" xmlns:ns5="http://soa.coe.com/CommonTypes/Mediation/MsgHeader" xmlns:ns6="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://soa.coe.com/infra/mediation/CommonServices/LogEvent" xmlns:pfx2="http://soa.coe.com/CommonTypes/Mediation/xmlMsg" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/xmlMsgSend/Send-XmlMsg-To-Jms-Start-Input.xsd">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+    <xsd:element name="input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="destination" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="weight" type="xsd:int"/>
+                <xsd:element name="Body">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:any namespace="##any" processContents="skip"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="xmlMsgAction" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="overwriteMsgPriority" type="xsd:int"/>
+                <xsd:element minOccurs="0" name="overwriteMsgId" type="ns3:event_id_type"/>
+                <xsd:element minOccurs="0" name="overwriteTransactionId" type="ns3:transaction_id_type"/>
+                <xsd:element minOccurs="0" name="batchInfo">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="propagateFromContext" type="xsd:boolean"/>
+                            <xsd:element minOccurs="0" name="overwriteBatchInfo" type="ns3:batch_info_type"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="correlationId" type="ns3:correlation_id_type"/>
+                <xsd:element minOccurs="0" name="privateContext">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="propagateFromContext" type="xsd:boolean"/>
+                            <xsd:element minOccurs="0" name="overwritePrivateCtx" type="ns3:sequence_any_type"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

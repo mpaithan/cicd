@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.tibco.com/schemas/src/CORE_COMMON/Resources/Schemas/AutoTests/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/src/CORE_COMMON/Resources/Schemas/AutoTests/Schema.xsd">
+	<xs:element name="AutoTestEvent" type="AutoTestEvent_type"/>
+	<xs:complexType name="AutoTestEvent_type">
+		<xs:sequence>
+			<xs:element ref="AnalyzedSystem"/>
+			<xs:element ref="Status"/>
+			<xs:element minOccurs="0" ref="Properties"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Status">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="UP"/>
+				<xs:enumeration value="DOWN"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Properties" type="Properties_type"/>
+	<xs:complexType name="Properties_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="Property"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Key">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="className"/>
+				<xs:enumeration value="jdbcUserName"/>
+				<xs:enumeration value="jdbcUrl"/>
+				<xs:enumeration value="bwExceptionStackTrace"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Value" type="xs:string"/>
+	<xs:element name="Property" type="Property_type"/>
+	<xs:complexType name="Property_type">
+		<xs:sequence>
+			<xs:element ref="Key"/>
+			<xs:element ref="Value"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AnalyzedSystem">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="EMS"/>
+				<xs:enumeration value="DATABASE"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SystemStatus" type="SystemStatus_type"/>
+	<xs:complexType name="SystemStatus_type">
+		<xs:sequence>
+			<xs:element ref="AnalyzedSystem"/>
+			<xs:element ref="Status"/>
+			<xs:element ref="StatusDate"/>
+			<xs:element ref="ForceTrace"/>
+			<xs:element minOccurs="0" ref="Properties"/>
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="StatusDate" type="xs:dateTime"/>
+	<xs:element name="ForceTrace" type="xs:boolean"/>
+</xs:schema>

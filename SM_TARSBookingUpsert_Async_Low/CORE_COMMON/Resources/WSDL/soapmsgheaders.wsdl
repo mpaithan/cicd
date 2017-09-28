@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://soa.coe.com/CommonTypes/Mediation/MsgHeader" xmlns:tns="http://soa.coe.com/CommonTypes/Mediation/MsgHeaderWSDL" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soa.coe.com/CommonTypes/Mediation/MsgHeaderWSDL">
+    <import location="../Schemas/Messaging/MsgHeader.xsd" namespace="http://soa.coe.com/CommonTypes/Mediation/MsgHeader"/>
+    <message name="m_msgHeader">
+        <part element="ns:msgHeader" name="p_msgHeader"/>
+    </message>
+</definitions>

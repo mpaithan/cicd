@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Repository:repository xmlns:Repository="http://www.tibco.com/xmlns/repo/types/2002">
+    <name name="SM_TARSBookingUpsert_Async">
+        <version>3</version>
+        <author>%%TIBUnit/author%%</author>
+        <fileLocation>./target/SM_TARSBookingUpsert_Async.projlib</fileLocation>
+        <resources>/SM_TARSBookingUpsert_Async/v1/Services/Starters/TARSBooking_XML_JMS_Async.process</resources>
+    </name>
+</Repository:repository>

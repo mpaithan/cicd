@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://soa.coe.com/infra/mediation/CommonServices/StatEventFault" xmlns:ns0="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soa.coe.com/infra/mediation/CommonServices/StatEventFault">
+	<xs:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" schemaLocation="../../../../CORE_COMMON/Resources/Schemas/ErrorHandling/BWException.xsd"/>
+	<xs:element name="statEvent_input" type="LE_stat_event_input_type"/>
+	<xs:complexType name="LE_stat_event_input_type">
+		<xs:choice>
+			<xs:element name="fault">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element default="BW" name="sourceName" type="xs:string"/>
+						<xs:element name="correlationId" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="LE_stat_event_output_type">
+		<xs:sequence>
+			<xs:element name="result">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="isActivated" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="correlationId" type="xs:string"/>
+						<xs:element minOccurs="0" name="error">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="ns0:bwException"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="statEvent_output" type="LE_stat_event_output_type"/>
+</xs:schema>

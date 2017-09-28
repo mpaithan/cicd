@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://com.tibco.schemas/rest/standard/output" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="RESTResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="binaryContent" type="xs:base64Binary"/>
+				<xs:element minOccurs="0" name="asciiContent" type="xs:string"/>
+				<xs:element minOccurs="0" name="Headers">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="StatusLine" type="xs:string"/>
+							<xs:element minOccurs="0" name="Content-Type" type="xs:string"/>
+							<xs:element minOccurs="0" name="Location" type="xs:string"/>
+							<xs:element minOccurs="0" name="Set-Cookie" type="xs:string"/>
+							<xs:element minOccurs="0" name="Pragma" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="mimeEnvelopeElement">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="mimePart">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="mimeHeaders">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="content-disposition" type="xs:string"/>
+													<xs:element name="content-type" type="xs:string"/>
+													<xs:element minOccurs="0" name="content-transfer-encoding" type="xs:string"/>
+													<xs:element minOccurs="0" name="content-id" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:choice>
+											<xs:element name="binarycontent" type="xs:base64Binary"/>
+											<xs:element name="textcontent" type="xs:string"/>
+											<xs:element name="filename" type="xs:string"/>
+										</xs:choice>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

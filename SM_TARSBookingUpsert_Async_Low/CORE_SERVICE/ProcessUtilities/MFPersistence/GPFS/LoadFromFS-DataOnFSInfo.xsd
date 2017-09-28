@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:ns="http://www.tibco.com/namespaces/tnt/plugins/file/v2" xmlns:ns1="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:ns11="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:ns12="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns2="http://www.tibco.com/namespaces/tnt/plugins/file" xmlns:ns3="http://www.tibco.com/pe/EngineTypes" xmlns:ns4="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/MFPersistence/MFPersistenceInput.xsd" xmlns:pfx1="http://soa.coe.com/infra/mediation/CommonServices/LogEvent" xmlns:pfx2="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:pfx21="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://xmlns.example.com/1352998834454/DataOnFSInfo">
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="StoreFilePath" type="xsd:string"/>
+                <xsd:element name="StoreDirPath" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

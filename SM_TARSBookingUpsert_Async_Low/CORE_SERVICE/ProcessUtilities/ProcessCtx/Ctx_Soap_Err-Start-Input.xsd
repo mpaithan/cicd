@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:ns="http://schemas.dg.dexwired.net/GEDC_MESSAGING/MsgHeaders/MsgCorrelation" xmlns:ns1="http://schemas.dg.dexwired.net/GEDC_MESSAGING/MsgHeaders/MsgDCSFHeader" xmlns:ns12="http://schemas.dg.dexwired.net/FIIP_COMMON/ProcessContext/StdProcessContext.xsd" xmlns:ns2="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns22="http://schemas.dg.dexwired.net/FIIP_COMMON/Messaging/StdSoapHeader" xmlns:ns23="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:ns3="http://schemas.dg.dexwired.net/GEDC_CS_AUDITLOGGING/ErrorHandling/BuildError" xmlns:ns4="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:ns5="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://schemas.dg.dexwired.net/GEDC_CS_AUDITLOGGING/ErrorHandling/BWException" xmlns:pfx2="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/ProcessCtx/Ctx_Soap_Err-Start-Input.xsd">
+    <xsd:element name="Input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" name="exchangeCode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="serviceCode" type="xsd:string"/>
+                <xsd:element name="NativeError">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:any namespace="##any" processContents="skip"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

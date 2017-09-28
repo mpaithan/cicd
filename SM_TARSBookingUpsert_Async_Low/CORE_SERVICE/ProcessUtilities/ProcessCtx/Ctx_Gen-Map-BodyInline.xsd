@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:bwCustomFunctions="java://com.tibco.tibcobw.customfunctions.bwCustomFunctions" xmlns:ns="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:ns2="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns4="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:ns5="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://soa.coe.com/infra/mediation/CommonServices/LogEvent" xmlns:pfx2="http://soa.coe.com/CommonTypes/Mediation/MsgHeader" xmlns:pfx3="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:pfx4="http://soa.coe.com/CommonTypes/Mediation/xmlMsg" xmlns:pfx5="http://soa.coe.com/CommonTypes/Mediation/MsgHeader_simple" xmlns:pfx6="http://www.tibco.com/pe/Inspector" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:tns="/CORE_SERVICE/ProcessUtilities/ProcessCtx/Ctx_Gen.process/Map-Body" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/CORE_SERVICE/ProcessUtilities/ProcessCtx/Ctx_Gen.process/Map-Body" xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework" schemaLocation="../../../CORE_COMMON/Resources/Schemas/CommonTypes/CommonFrameworkTypes.xsd"/>
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" ref="ns:ReceivedBody"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

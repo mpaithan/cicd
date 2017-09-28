@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+	xmlns="http://soa.coe.com/CommonTypes/Mediation/MsgHeader_simple"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:CTMF="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes"
+	targetNamespace="http://soa.coe.com/CommonTypes/Mediation/MsgHeader_simple"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:pref="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+
+	<!--***-->
+
+	<xs:import schemaLocation="../CommonTypes/MsgHeaderTypes.xsd" namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes"></xs:import>
+	<xs:element name="msgHeader_simple" type="ESB_msg_header_type" />
+	<xs:complexType name="ESB_msg_header_type">
+		<xs:sequence>
+			<xs:element name="eventId" type="CTMF:event_id_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="timeStamp" type="xs:dateTime"
+				nillable="true" minOccurs="0" />
+			<xs:element name="source" type="CTMF:source_system_type"
+				minOccurs="0" />
+			<xs:element name="priority" type="xs:int" nillable="true"
+				minOccurs="0" />
+			<xs:element name="exchangeId" type="CTMF:exchange_id_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="serviceId" type="CTMF:service_id_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="exchangeCode"
+				type="CTMF:exchange_code_type" nillable="true" minOccurs="0" />
+			<xs:element name="serviceCode" type="CTMF:service_code_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="operation" type="CTMF:operation_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="trace" type="CTMF:trace_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="isReplay" type="CTMF:is_replay_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="weight" type="xs:int" nillable="true"
+				minOccurs="0" />
+			<xs:element name="transactionId"
+				type="CTMF:transaction_id_type" minOccurs="0" />
+			<xs:element name="correlationId"
+				type="CTMF:correlation_id_type" minOccurs="0" />
+			<xs:element name="privateCtxt" type="CTMF:sequence_any_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="batchInfo" type="CTMF:batch_info_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="extendedCtx" type="CTMF:sequence_any_type"
+				nillable="true" minOccurs="0" />
+			<xs:element name="exchangeHistory"
+				type="CTMF:sequence_any_type" nillable="true" minOccurs="0" />
+			<xs:element name="exchangeVersion" type="CTMF:version_type"
+				nillable="true" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

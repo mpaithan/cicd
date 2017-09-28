@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://accorhotels.com/internal/schema/local/SM_BookingUpsert_Async/v1" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://accorhotels.com/internal/schema/local/SM_BookingUpsert_Async/v1">
+	<complexType name="FileTechnicalInformation">
+		<annotation>
+			<documentation>Technical Header to keep JSON file information</documentation>
+		</annotation>
+		<attribute name="ID" type="string"/>
+		<attribute name="filename" type="string"/>
+		<attribute name="timestamp" type="string"/>
+		<attribute name="encoding" type="string"/>
+	</complexType>
+	<element name="FileHeader" type="tns:FileTechnicalInformation"/>
+	<element name="FileBody" type="string"/>
+	<element name="FileEnvelope">
+		<complexType>
+			<sequence>
+				<element ref="tns:FileBody"/>
+				<element ref="tns:FileHeader"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

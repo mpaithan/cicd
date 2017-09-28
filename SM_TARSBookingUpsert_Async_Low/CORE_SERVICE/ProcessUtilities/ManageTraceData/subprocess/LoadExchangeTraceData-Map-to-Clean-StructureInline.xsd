@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns0="http://www.tibco.com/namespaces/tnt/plugins/file/v2" xmlns:ns1="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd" xmlns:ns2="http://www.tibco.com/pe/EngineTypes" xmlns:ns3="http://soa.coe.com/CommonTypes/Mediation/Framework" xmlns:ns4="http://www.tibco.com/namespaces/tnt/plugins/file" xmlns:ns5="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:ns6="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeFileData/Schema.xsd" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://soa.coe.com/CommonTypes/Mediation/Framework/BWException" xmlns:pfx2="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:pfx3="http://soa.coe.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/ExchangeTraceDataCount.xsd" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:tns="/CORE_SERVICE/ProcessUtilities/ManageTraceData/subprocess/LoadExchangeTraceData.process/Map-to-Clean-Structure" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/CORE_SERVICE/ProcessUtilities/ManageTraceData/subprocess/LoadExchangeTraceData.process/Map-to-Clean-Structure">
+    <xsd:import namespace="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeTraceData/Schema.xsd" schemaLocation="../../../Resources/Schemas/ExchangeTraceData/ExchangeTraceData.xsd"/>
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" ref="ns1:ExchangeTraceData"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

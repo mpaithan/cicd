@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://accorhotels.com/internal/schema/local/SM_TARSBookingUpsert_Async/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://accorhotels.com/internal/schema/local/SM_TARSBookingUpsert_Async/v1">
+	<xs:complexType name="FileTechnicalInformation">
+		<xs:attribute name="ID" type="xs:string"/>
+		<xs:attribute name="filename" type="xs:string"/>
+		<xs:attribute name="timestamp" type="xs:string"/>
+		<xs:attribute name="encoding" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="Request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FileHeader"/>
+				<xs:element ref="FileBody"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Reply" type="xs:string"/>
+	<xs:element name="Error" type="xs:string"/>
+	<xs:element name="FileHeader" type="FileTechnicalInformation"/>
+	<xs:element name="FileBody" type="xs:string"/>
+</xs:schema>

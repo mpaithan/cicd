@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ns.tibco.com/jms/appProp/JMS_APP-Stats" targetNamespace="http://ns.tibco.com/jms/appProp/JMS_APP-Stats">
+  <complexType name="JMS_APP-Stats">
+    <sequence>
+      <element maxOccurs="1" minOccurs="1" name="stat.correlationId" type="string"/>
+      <element maxOccurs="1" minOccurs="1" name="stat.host" type="string"/>
+      <element maxOccurs="1" minOccurs="1" name="stat.eventType" type="string"/>
+      <element maxOccurs="1" minOccurs="1" name="stat.source" type="string"/>
+      <element maxOccurs="1" minOccurs="0" name="stat.application" type="string"/>
+      <element maxOccurs="1" minOccurs="0" name="stat.subject" type="string"/>
+      <element maxOccurs="1" minOccurs="1" name="stat.typeOf" type="string"/>
+      <element maxOccurs="1" minOccurs="1" name="stat.invoke.utc" type="long"/>
+    </sequence>
+  </complexType>
+</schema>

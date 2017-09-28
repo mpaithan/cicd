@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:customLocalCache="java://com.tibco.tibcobw.customfunctions.FLocalCache" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.tibco.com/pe/DeployedVarsType" xmlns:pfx2="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ExchangeFileData/Schema.xsd" xmlns:tns="/CORE_SERVICE/ProcessUtilities/ManageTraceData/subprocess/ManageServiceCodeCache.process/Update" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/CORE_SERVICE/ProcessUtilities/ManageTraceData/subprocess/ManageServiceCodeCache.process/Update">
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" name="Adder" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

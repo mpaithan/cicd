@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension id="bwCustomFunctionsCustomXPathFunctionGroup"
+        name="bwCustomFunctionsCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.bwCustomFunctionsCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctions.cxf"/>
+    </extension>
+    <extension id="FCryptCustomXPathFunctionGroup"
+        name="FCryptCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.FCryptCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctionsFCrypt.cxf"/>
+    </extension>
+    <extension id="FLocalCacheCustomXPathFunctionGroup"
+        name="FLocalCacheCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.FLocalCacheCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctionsFLocalCache.cxf"/>
+    </extension>
+    <extension id="FStringCustomXPathFunctionGroup"
+        name="FStringCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.FStringCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctionsFString.cxf"/>
+    </extension>
+    <extension id="FTimeCustomXPathFunctionGroup"
+        name="FTimeCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.FTimeCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctionsFTime.cxf"/>
+    </extension>
+    <extension id="TableCorrespondanceCustomXPathFunctionGroup"
+        name="TableCorrespondanceCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.TableCorrespondanceCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctionsTableCorrespondance.cxf"/>
+    </extension>
+    <extension id="XPathUtilitiesCustomXPathFunctionGroup"
+        name="XPathUtilitiesCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.bw.xpath.utilities.cxf.XPathUtilitiesCustomXPathFunctionGroup" id="com.bw.xpath.utilitiesXPathUtilities.cxf"/>
+    </extension>
+    <extension id="Base64EncodingCustomXPathFunctionGroup"
+        name="Base64EncodingCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.Base64EncodingCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctionsBase64Encoding.cxf"/>
+    </extension>
+    <extension id="BlowfishEncodingCustomXPathFunctionGroup"
+        name="BlowfishEncodingCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.BlowfishEncodingCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctionsBlowfishEncoding.cxf"/>
+    </extension>
+    <extension id="BwStatCustomFunctionsCustomXPathFunctionGroup"
+        name="BwStatCustomFunctionsCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.BwStatCustomFunctionsCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctionsBwStatCustomFunctions.cxf"/>
+    </extension>
+    <extension id="TranscoCustomFunctionsCustomXPathFunctionGroup"
+        name="TranscoCustomFunctionsCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.legacy.transco.customfunctions.cxf.TranscoCustomFunctionsCustomXPathFunctionGroup" id="com.tibco.tibcobw.legacy.transco.customfunctionsTranscoCustomFunctions.cxf"/>
+    </extension>
+    <extension id="bwCustomFunctionsCustomXPathFunctionGroup"
+        name="bwCustomFunctionsCustomXPathFunctionGroup" point="com.tibco.xml.cxf.common.customXPathFunction">
+        <customXPathFunctionGroup
+            class="com.tibco.tibcobw.customfunctions.cxf.bwCustomFunctionsCustomXPathFunctionGroup" id="com.tibco.tibcobw.customfunctionsbwCustomFunctions.cxf"/>
+    </extension>
+</plugin>

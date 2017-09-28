@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes">
+
+	<!--***-->
+	<!--***************************************************************************-->
+	<!--	TYPES  SHARED IN Service framework including		-->
+	<!--	messaging headers, process context, exception handling 		-->
+	<!--	and logging											-->
+	<!--***************************************************************************-->
+	<xs:complexType name="sequence_any_type">
+		<xs:sequence>
+			<xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="skip"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:simpleType name="event_id_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="source_system_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="128"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="exchange_id_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="service_id_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="exchange_code_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="operation_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="service_code_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:complexType name="trace_type">
+		<xs:attribute name="global" type="enable_tracing_type"/>
+		<xs:attribute name="body" type="log_msg_body_type"/>
+		<xs:attribute name="cslt" type="log_msg_consulting_type"/>
+		<xs:attribute name="cmpt" type="log_component_type"/>
+		<xs:attribute name="cmpt_error" type="log_component_error_type"/>
+		<xs:attribute name="start_ech" type="start_ech_type"/>
+		<xs:attribute name="end_ech" type="end_ech_type"/>
+		<xs:attribute name="set_ech_error" type="set_ech_error_type"/>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:simpleType name="enable_tracing_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="log_msg_body_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="log_component_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="log_component_error_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="log_msg_consulting_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="start_ech_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="end_ech_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="set_ech_error_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="is_replay_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="transaction_id_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--*** The correlation id size must be far greater than the messageId type because it may contain combinations of UUIDs-->
+	<xs:simpleType name="correlation_id_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:complexType name="batch_info_type">
+		<xs:sequence>
+			<xs:element name="batchName" nillable="true" type="batch_name_type"/>
+			<xs:element name="msgNo" nillable="true" type="xs:int"/>
+			<xs:element name="batchSize" nillable="true" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--***-->
+	<xs:simpleType name="batch_name_type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--***-->
+	<xs:simpleType name="version_type">
+		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+	<xs:element name="HistoryRecord" type="History_Record_type"/>
+	<xs:complexType name="History_Record_type">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FunctionalContext" type="sequence_any_type"/>
+		</xs:sequence>
+		<xs:attribute name="HistLevel" type="xs:integer" use="required"/>
+		<xs:attribute name="ServiceCode" type="service_code_type" use="required"/>
+		<xs:attribute name="ServiceID" type="service_id_type" use="required"/>
+		<xs:attribute name="Weight" type="xs:integer" use="required"/>
+	</xs:complexType>
+	<xs:element name="HistLevel" type="xs:integer"/>
+	<xs:element name="ServiceID" type="service_id_type"/>
+	<xs:element name="ExchangeID" type="exchange_id_type"/>
+	<xs:element name="ExchangeCode" type="exchange_code_type"/>
+	<xs:element name="ServiceCode" type="service_code_type"/>
+	<xs:element name="Weight" type="xs:integer"/>
+	<xs:complexType name="History_type">
+		<xs:sequence>
+			<xs:element ref="IsEnabled"/>
+			<xs:element ref="HistoryDirection"/>
+			<xs:element name="ExchangeID" nillable="true" type="exchange_id_type"/>
+			<xs:element name="ExchangeCode" nillable="true" type="exchange_code_type"/>
+			<xs:element minOccurs="0" name="ServiceCode" nillable="true" type="service_code_type"/>
+			<xs:element minOccurs="0" name="privateCtxt" nillable="true" type="sequence_any_type"/>
+			<xs:element minOccurs="0" name="batchInfo" nillable="true" type="batch_info_type"/>
+			<xs:element minOccurs="0" name="extendedCtx" nillable="true" type="sequence_any_type"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="HistoryRecord"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="History" type="History_type"/>
+	<xs:element name="IsEnabled" type="xs:boolean"/>
+	<xs:element name="HistoryDirection" type="HistoryDirection_type"/>
+	<xs:simpleType name="HistoryDirection_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Push"/>
+			<xs:enumeration value="Pull"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

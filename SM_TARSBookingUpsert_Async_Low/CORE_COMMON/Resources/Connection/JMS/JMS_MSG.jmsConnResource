@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://xsd.tns.tibco.com/bw/models/sharedresource/jms" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_Vp4bkJcREeeOzMRxLKEo5A" name="CORE_COMMON.Resources.Connection.JMS.JMS_MSG" type="jms:JMSConnectionFactory">
+  <jndi:reference xmi:id="_Vp4bkZcREeeOzMRxLKEo5A" key="jndiConnectionJNDIName" type="jms:JNDIConnection" value="CORE_COMMON.Resources.Connection.JMS.JMS_MSGJNDI"/>
+  <jndi:configuration xsi:type="jms:JNDIConnectionFactory" xmi:id="_Vp4bkpcREeeOzMRxLKEo5A" factoryType="Queue/Topic" jndiName="%%CORE_COMMON/SharedConnections/JMS/EMS_MSG/queueConnFactory%%" topicFactoryJNDIName="%%CORE_COMMON/SharedConnections/JMS/EMS_MSG/topicConnFactory%%">
+    <substitutionBindings xmi:id="_Vp8tAJcREeeOzMRxLKEo5A" template="jndiName" propName="CORE_COMMON/SharedConnections/JMS/EMS_MSG/queueConnFactory"/>
+    <substitutionBindings xmi:id="_Vp_wUJcREeeOzMRxLKEo5A" template="topicFactoryJNDIName" propName="CORE_COMMON/SharedConnections/JMS/EMS_MSG/topicConnFactory"/>
+    <userCredentials xmi:id="_Vp4bk5cREeeOzMRxLKEo5A" username="%%CORE_COMMON/SharedConnections/JMS/EMS_MSG/user%%" password="%%CORE_COMMON/SharedConnections/JMS/EMS_MSG/password%%">
+      <substitutionBindings xmi:id="_VqCzoJcREeeOzMRxLKEo5A" template="username" propName="CORE_COMMON/SharedConnections/JMS/EMS_MSG/user"/>
+      <substitutionBindings xmi:id="_VqFP4JcREeeOzMRxLKEo5A" template="password" propName="CORE_COMMON/SharedConnections/JMS/EMS_MSG/password"/>
+    </userCredentials>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" factory="com.tibco.xml.cxf.user.com.bw.xpath.utilities" name="cxf.user.com.bw.xpath.utilities">
+<implementation class="com.bw.xpath.utilities.cxf.XPathUtilitiesCustomXPathFunctionGroup"/></scr:component>

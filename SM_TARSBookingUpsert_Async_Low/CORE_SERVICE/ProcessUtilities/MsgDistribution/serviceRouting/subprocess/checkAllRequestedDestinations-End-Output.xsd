@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ns="http://soa.coe.com/CommonTypes/Mediation/BWProcessContext" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd" xmlns:pfx2="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/SM_TARSBookingUpsert_Async_Low/CORE_SERVICE/ProcessUtilities/MsgDistribution/serviceRouting/subprocess/checkAllRequestedDestinations-End-Output.xsd">
+    <xsd:import namespace="http://soa.coe.com/CommonTypes/Mediation/Framework_MsgHeaderTypes" schemaLocation="../../../../../CORE_COMMON/Resources/Schemas/CommonTypes/MsgHeaderTypes.xsd"/>
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="serviceCode" type="xsd:string"/>
+                <xsd:element name="weight" type="xsd:string"/>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" name="DestinationCheck">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="TargetServiceCode" type="xsd:string"/>
+                            <xsd:element name="BodyToSend">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:any namespace="##any" processContents="strict"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="JmsRequestTimeout" type="xsd:int"/>
+                            <xsd:element minOccurs="0" name="replyToQueue" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="JMSExpiration" type="xsd:int"/>
+                            <xsd:element name="TargetQueue" type="xsd:string"/>
+                            <xsd:element name="CanSendMsg" type="xsd:boolean"/>
+                            <xsd:element minOccurs="0" name="overwriteMsgPriority" type="xsd:int"/>
+                            <xsd:element minOccurs="0" name="overwriteMsgId" type="pfx2:event_id_type"/>
+                            <xsd:element minOccurs="0" name="overwriteTransactionId" type="pfx2:transaction_id_type"/>
+                            <xsd:element minOccurs="0" name="batchInfo">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="propagateFromContext" type="xsd:boolean"/>
+                                        <xsd:element minOccurs="0" name="overwriteBatchInfo" type="pfx2:batch_info_type"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="correlationId" type="pfx2:correlation_id_type"/>
+                            <xsd:element minOccurs="0" name="privateContext">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="propagateFromContext" type="xsd:boolean"/>
+                                        <xsd:element minOccurs="0" name="overwritePrivateCtx" type="pfx2:sequence_any_type"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="FailureReason" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

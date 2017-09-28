@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/src/CORE_SERVICE/Resources/Schemas/ComponentChain/Schema.xsd">
+	<xs:element name="ComponentChainList" type="Component_Chain_List_type"/>
+	<xs:complexType name="Component_Chain_List_type">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ComponentChains"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ComponentChains" type="Component_Chains_type"/>
+	<xs:complexType name="Component_Chains_type">
+		<xs:sequence>
+			<xs:element ref="Father"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="Child"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="FatherServiceCode" type="xs:string"/>
+	<xs:element name="ChildServiceCode" type="xs:string"/>
+	<xs:element name="ChildAddress" type="xs:string"/>
+	<xs:element name="FatherReturnAddress" type="xs:string"/>
+	<xs:element name="Father" type="Father_type"/>
+	<xs:complexType name="Father_type">
+		<xs:sequence>
+			<xs:element ref="FatherServiceCode"/>
+			<xs:element minOccurs="0" ref="FatherReturnAddress"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Child" type="Child_type"/>
+	<xs:complexType name="Child_type">
+		<xs:sequence>
+			<xs:element ref="ChildServiceCode"/>
+			<xs:element minOccurs="0" ref="ChildOperation"/>
+			<xs:element ref="ChildAddress"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ChildOperation" type="xs:string"/>
+</xs:schema>

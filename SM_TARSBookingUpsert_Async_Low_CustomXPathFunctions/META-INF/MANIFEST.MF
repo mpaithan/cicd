@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SM_TARSBookingUpsert_Async_Low_CustomXPathFunctions
+Bundle-SymbolicName: SM_TARSBookingUpsert_Async_Low_CustomXPathFunctions; singleton:=true
+Bundle-Version: 1.0.0
+Import-Package:  com.tibco.xml.cxf.common.annotations
+Export-Package: com.bw.xpath.utilities,
+ com.bw.xpath.utilities.cxf,
+ com.tibco.tibcobw.customfunctions,
+ com.tibco.tibcobw.customfunctions.cxf,
+ com.tibco.tibcobw.legacy.transco.customfunctions,
+ com.tibco.tibcobw.legacy.transco.customfunctions.cxf
+Bundle-ClassPath: .,
+ lib/customXPathFunction.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

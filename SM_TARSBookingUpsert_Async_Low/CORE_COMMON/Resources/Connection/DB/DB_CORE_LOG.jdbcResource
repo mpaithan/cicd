@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_VeUr0JcREeeOzMRxLKEo5A" name="CORE_COMMON.Resources.Connection.DB.DB_CORE_LOG" type="jdbc:JdbcDataSource">
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_VeUr0ZcREeeOzMRxLKEo5A" username="%%CORE_COMMON/SharedConnections/JDBC/CORE_LOG/User%%" password="%%CORE_COMMON/SharedConnections/JDBC/CORE_LOG/Password%%">
+    <substitutionBindings xmi:id="_VeUr0pcREeeOzMRxLKEo5A" template="maxConnections" propName="CORE_COMMON/SharedConnections/JDBC/CORE_LOG/MaxConnections"/>
+    <substitutionBindings xmi:id="_VeUr05cREeeOzMRxLKEo5A" template="maxConnections" propName="Conn"/>
+    <substitutionBindings xmi:id="_VefD4JcREeeOzMRxLKEo5A" template="username" propName="CORE_COMMON/SharedConnections/JDBC/CORE_LOG/User"/>
+    <substitutionBindings xmi:id="_VehgIJcREeeOzMRxLKEo5A" template="password" propName="CORE_COMMON/SharedConnections/JDBC/CORE_LOG/Password"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_VeVS4JcREeeOzMRxLKEo5A" jdbcDriver="tibcosoftwareinc.jdbc.oracle.OracleDriver">
+      <substitutionBindings xmi:id="_VeVS4ZcREeeOzMRxLKEo5A" template="loginTimeout" propName="CORE_COMMON/SharedConnections/JDBC/CORE_LOG/Timeout"/>
+      <substitutionBindings xmi:id="_VeVS4pcREeeOzMRxLKEo5A" template="loginTimeout" propName="Timeout"/>
+      <substitutionBindings xmi:id="_aWDGYKNfEeeLRMcZyaZd_g" template="dbURL" propName="CORE_COMMON/SharedConnections/JDBC/CORE_LOG/JDBCURL"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>
